@@ -1,0 +1,15 @@
+version: "3"
+services:
+  hugo:
+    image: jojomi/hugo:0.55
+    volumes:
+      - /Users/hikarumaruyama/src/github.com/hmaruyama/maru-hugo-test:/src
+      - /Users/hikarumaruyama/src/github.com/hmaruyama/maru-hugo-test/public:/output
+    environment:
+      - HUGO_REFRESH_TIME=3600
+      - HUGO_WATCH=true
+      # - HUGO_THEME=mytheme
+      # - HUGO_BASEURL=mydomain.com
+    restart: always
+    ports:
+      - 1313:1313
